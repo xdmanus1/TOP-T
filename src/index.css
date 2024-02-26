@@ -77,3 +77,42 @@ button:focus-visible {
   background-color: #2b2b2b !important;
   transition: background-color 0.3s, color 0.3s;
 }
+
+
+
+
+
+
+.dark-theme button {
+  color: white;
+}
+
+.light-theme button {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.769);
+}
+
+.light-theme button {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.769);
+  transition: background 0.4s ease-in-out;
+}
+
+.light-theme button:hover {
+  color: rgb(0, 0, 0);
+  background-color: #d5c28f;
+  border-color: var(--top5-color);
+
+}
+
+.dark-theme button {
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.769);
+  transition: background 0.4s ease-in-out;
+}
+
+.dark-theme button:hover {
+  color: rgb(0, 0, 0);
+  background-color: #d5c28f;
+  border-color: var(--top5-color);
+}

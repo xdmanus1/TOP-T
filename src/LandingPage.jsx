@@ -9,7 +9,6 @@ import testimg3 from './assets/test3.jpg';
 import testimg4 from './assets/test4.jpg';
 
 const LandingPage = () => {
-    // Sample data for image carousel
     const images = [
         testimg1,
         testimg2,
@@ -85,6 +84,27 @@ const LandingPage = () => {
                     <h4>Kódolás:</h4>
                     <img className='imgbox' src={testimg4} alt="testimg" />
                 </div>
+            </div>
+            <div className='pricing'>
+                <div className='pricingbox'>
+                    <h4 className='typethingy'>Basic</h4>
+                    <h4 className='price'>Ár: 100.000ft-tól</h4>
+                    <p className='ppric'>- Egy oldalas web oldal <br />- Custom Domain <br />- Support</p>
+                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                </div>
+                <div className='pricingbox'>
+                    <h4 className='typethingy'>Pro</h4>
+                    <h4 className='price'>Ár: 200.000ft-tól</h4>
+                    <p className='ppric'>- Több oldalas web oldal <br />- Custom Domain <br />- Support</p>
+                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                </div>
+                <div className='pricingbox'>
+                    <h4 className='typethingy'>Enterprise</h4>
+                    <h4 className='price'>Ár: 300.000ft-tól</h4>
+                    <p className='ppric'>- Több oldalas web oldal <br />- Custom Domain <br />- Support</p>
+                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                </div>
+
             </div>
         </div >
     );

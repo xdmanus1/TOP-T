@@ -42,11 +42,11 @@ const Navbar = () => {
                     </div>
                     <div className={`menu-items ${isMenuOpen ? 'open' : ''}`}>
                         <NavItem
-                            label="Fő oldal"
+                            label="Főoldal"
                             index={0}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}
-                            href='javascript'
+                            href='/LandingPage'
                         />
                         <NavItem
                             label="Rólunk"
