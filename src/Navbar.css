@@ -139,11 +139,10 @@
     position: absolute;
     top: 10%;
     margin-top: 100px;
-    right: 50%;
-    transform: translateX(50%);
+    right: 25%;
     opacity: 1;
     visibility: visible;
-    margin-right: 0px;
+
 
 }
 

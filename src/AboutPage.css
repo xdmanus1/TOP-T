@@ -1,0 +1,97 @@
+.about-page {
+    padding: 50px 20px;
+    border-radius: 20px;
+    background-color: transparent !important;
+}
+
+.light-theme {
+    background-color: transparent !important;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.team-category {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.team-member {
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: 300px;
+    background: rgba(224, 224, 224, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.team-member:hover {
+    background: rgba(204, 204, 204, 0.7);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    /* Adjusted box-shadow */
+    transform: scale(1.05);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.team-member h3,
+.team-member p {
+    margin: 0;
+}
+
+.dark-theme .team-member {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dark-theme .team-member:hover {
+    background: rgba(155, 155, 155, 0.7);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Box shadow only on hover */
+.team-member {
+    box-shadow: none;
+    /* Remove box shadow by default */
+}
+
+.team-member:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Add box shadow on hover */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .team-category {
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        max-height: 150px;
+        margin-top: 200px;
+        /* Center elements horizontally */
+    }
+
+    .team-member {
+        flex: 0 0 calc(100% - 20px);
+        /* Set flex to 100% minus margins */
+        margin: 0 0 15px 0;
+        max-width: 90%;
+        min-width: 60%;
+        /* Set margin for spacing */
+    }
+}

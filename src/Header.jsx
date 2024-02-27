@@ -1,5 +1,7 @@
+// Navbar.jsx
 import React, { useState } from 'react';
-import './Navbar.css'; // Import your CSS file for styling
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
@@ -33,7 +35,7 @@ const Navbar = () => {
     return (
         <div className='base'>
             <nav className={`navbar ${theme}`}>
-                <a className="navbar-left" href='#'>Top T</a>
+                <Link to="/" className="navbar-left">Top T</Link>
                 <div className="navbar-right">
                     <div className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                         <div className="bar"></div>
@@ -46,19 +48,14 @@ const Navbar = () => {
                             index={0}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}
-                            href='/LandingPage'
+                            to="/" // Updated to="/" as it corresponds to the LandingPage route
                         />
                         <NavItem
                             label="Rólunk"
                             index={1}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}
-                        />
-                        <NavItem
-                            label="Portfólió"
-                            index={2}
-                            activeIndex={activeIndex}
-                            onClick={handleItemClick}
+                            to="/About"
                         />
                     </div>
                     <button className="theme-switch" onClick={toggleTheme}>
@@ -70,27 +67,24 @@ const Navbar = () => {
                     </button>
                 </div>
             </nav>
-
             <div className={`menu-overlay ${isMenuOpen ? 'open' : ''}`} onClick={closeMenu}></div>
-        </div >
+        </div>
     );
-
 };
 
-const NavItem = ({ label, index, activeIndex, onClick }) => {
+const NavItem = ({ label, index, activeIndex, onClick, to }) => {
     const isActive = activeIndex === index;
 
     return (
-        <a
-            href="#"
+        <Link
+            to={to}
             className={`nav-item ${isActive ? 'active' : ''}`}
             onClick={() => onClick(index)}
         >
             {label}
             {isActive && <div className="underline" />}
-        </a>
+        </Link>
     );
-
 };
 
 export default Navbar;
