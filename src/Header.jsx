@@ -57,6 +57,13 @@ const Navbar = () => {
                             onClick={handleItemClick}
                             to="/About"
                         />
+                        <NavItem
+                            label="Chat"
+                            index={1}
+                            activeIndex={activeIndex}
+                            onClick={handleItemClick}
+                            to="/PortfolioPage"
+                        />
                     </div>
                     <button className="theme-switch" onClick={toggleTheme}>
                         {theme === 'light' ? (
