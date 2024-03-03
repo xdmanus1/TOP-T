@@ -1,0 +1,240 @@
+/* App.css */
+
+/* Default Dark Theme */
+:root {
+    --background-color: #121212;
+    --text-color: #fff;
+    --form-bg-color: #1f1f1f;
+    --input-border-color: #555;
+    --placeholder-color: #aaa;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    background-color: var(--form-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.input-field {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid var(--input-border-color);
+    background-color: transparent;
+    color: black !important;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: var(--placeholder-color);
+}
+
+/* Dark Theme */
+.dark {
+    --background-color: #121212;
+    --text-color: #fff;
+    --form-bg-color: #1f1f1f;
+    --input-border-color: #555;
+    --placeholder-color: #aaa;
+}
+
+/* Light Theme */
+.light {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --form-bg-color: #ffffff;
+    --input-border-color: #ccc;
+    --placeholder-color: #888;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #555;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: #aaa;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+
+
+.container {
+    max-width: 600px;
+    margin: 100px auto 0 auto;
+    padding: 20px;
+    background-color: rgba(224, 224, 224, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.503);
+    color: rgb(0, 0, 0);
+}
+
+.dark-theme .container {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.439);
+}
+
+.ordtx {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #000000;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.dark-theme .input-field {
+    border-color: rgb(255, 255, 255) !important;
+    color: white !important;
+}
+
+.input-field::placeholder {
+    color: #000000;
+}
+
+.dark-theme .input-field::placeholder {
+    resize: none;
+    overflow-y: hidden;
+    color: #ffffff;
+}
+
+
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.367);
+}
+
+
+
+.modal.show {
+    display: block;
+}
+
+.modal.hide {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fefefe6e;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 30px;
+    width: 20%;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(3px);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.expandable {
+    resize: vertical;
+    overflow-y: hidden;
+}
+
+.input-field1 {
+    color: rgb(0, 0, 0) !important;
+    text-align: center;
+}
+
+.dark-theme.input-field1 {
+    color: rgb(255, 255, 255) !important;
+    text-align: center;
+}
+
+select {
+    pointer-events: auto;
+}
+
+.btn-submitdisabled {
+    cursor: not-allowed !important;
+}
+
+.btn-submit {
+    align-self: center;
+}
