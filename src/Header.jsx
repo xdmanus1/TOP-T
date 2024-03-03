@@ -20,8 +20,8 @@ const Navbar = () => {
         setTheme(newTheme);
         document.body.classList.remove('light-theme', 'dark-theme');
         document.body.classList.add(`${newTheme}-theme`);
-        document.documentElement.style.setProperty('--navbar-bg-light', newTheme === 'light' ? '#1a1a1a' : '#565656');
-        document.documentElement.style.setProperty('--navbar-bg-dark', newTheme === 'light' ? '#565656' : '#1a1a1a');
+        document.documentElement.style.setProperty('--navbar-bg-light', newTheme === 'light' ? '#000000' : '#565656');
+        document.documentElement.style.setProperty('--navbar-bg-dark', newTheme === 'light' ? '#565656' : '#000000');
     };
 
     const toggleMenu = () => {
@@ -58,7 +58,7 @@ const Navbar = () => {
                             to="/About"
                         />
                         <NavItem
-                            label="Chat"
+                            label="Portfólió"
                             index={1}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}

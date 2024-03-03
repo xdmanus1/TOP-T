@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import './LandingPage.css'; // import CSS for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import testimg1 from './assets/1test.jpg';
-import testimg2 from './assets/2test.jpg';
-import testimg3 from './assets/test3.jpg';
+import testimg1 from './assets/testsok1.jpg';
+import testimg2 from './assets/testsok5.jpg';
+import testimg3 from './assets/testsok4.jpg';
 import testimg4 from './assets/test4.jpg';
 
 const LandingPage = () => {
@@ -63,7 +63,7 @@ const LandingPage = () => {
                 </div>
             </div>
             <div>
-                <h2>Miért válasszon minket?</h2>
+                <h2 className='why-c-us'>Miért válasszon minket?</h2>
                 <ul className='why-us'>
                     <li><h3>Tapasztalt csapat:</h3> Top T-nk elkötelezett, tapasztalt szakemberekből áll, akik szerteágazó tudással rendelkeznek az informatika területén.</li>
                     <li><h3>Ügyfélközpontú megközelítés:</h3>Minden projektünkben az ügyfelek igényeire és céljaira koncentrálunk, hogy olyan egyedi megoldásokat nyújtsunk, amelyek valóban kiemelkedő eredményeket hoznak.</li>

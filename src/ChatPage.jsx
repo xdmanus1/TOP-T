@@ -4,16 +4,13 @@ import './ChatPage.css';
 function PortfolioItem({ name, image, description, link }) {
     return (
         <div className="portfolio-item">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-                <h3>{name}</h3>
-            </a>
-            <img src={image} alt={name} />
+            <h3>{name}</h3>
+            <img className='imagethingy' src={image} alt={name} />
             <p>{description}</p>
             <a href={link} target="_blank" rel="noopener noreferrer">
-                <button>Learn More</button>
-                <canvas className="noise-canvas"></canvas>
+                <button className='gomb'>Tudj meg többet</button>
             </a>
-        </div>
+        </div >
     );
 }
 
@@ -26,29 +23,24 @@ function Bubble({ style }) {
 function PortfolioPage() {
     const projects = [
         {
-            name: 'Project 1',
-            image: 'path/to/image1.jpg',
-            description: 'A brief description of the project.',
-            link: 'https://example.com/project1',
+            name: 'Top T Physics Constitution',
+            image: 'src/assets/TTPC.png',
+            description: 'Ez a projekt egy Közép Iskolás fizikai projekt munka miatt jött létre. Amelyben egy tömeg átváltót készítettünk el.',
+            link: 'http://ttpc.rf.gd',
         },
         {
-            name: 'Project 2',
-            image: 'path/to/image2.jpg',
+            name: 'Chronicles of the Relic Hunters',
+            image: 'src/assets/cotrh.png',
             description: 'Another brief description.',
-            link: 'https://example.com/project2',
+            link: 'http://projektmunka.rf.gd',
         },
         {
-            name: 'Project 3',
-            image: 'path/to/image3.jpg',
+            name: 'The Physics Game',
+            image: 'src/assets/tfg.png',
             description: 'The last project description.',
-            link: 'https://example.com/project3',
+            link: 'https://xdmanus1.github.io/the-physics-game/',
         },
-        {
-            name: 'Project 3',
-            image: 'path/to/image3.jpg',
-            description: 'The last project description.',
-            link: 'https://example.com/project3',
-        },
+
     ];
 
     const bubbleStyles = [
@@ -73,7 +65,7 @@ function PortfolioPage() {
 
     return (
         <div className="portfolio">
-            <h2>My Portfolio</h2>
+            <h1>Portfólió</h1>
             {/* {bubbles} */}
             <div className="portfolio-grid">
                 {projects.map((project, index) => (

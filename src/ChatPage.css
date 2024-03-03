@@ -9,8 +9,6 @@
 
 }
 
-body {}
-
 .portfolio h2 {
     font-size: 2em;
     margin-bottom: 20px;
@@ -24,15 +22,44 @@ body {}
 
 .portfolio-item {
     text-align: center;
-    width: 45%;
+    width: 44%;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.439);
     border-radius: 25px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Light theme glassmorphism */
+    background: rgba(224, 224, 224, 0.5) !important;
     backdrop-filter: blur(10px);
-    transition: all 0.2s ease-in-out;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.portfolio-item:hover {
+    background: rgba(204, 204, 204, 0.7) !important;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    /* Adjusted box-shadow */
+    transform: scale(1.05);
+}
+
+.dark-theme .portfolio-item {
+    background: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: none !important;
+}
+
+.dark-theme .portfolio-item:hover {
+    background: rgba(155, 155, 155, 0.7) !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.413) !important;
+}
+
+/* Box shadow only on hover */
+.portfolio-item {
+    box-shadow: none;
+    /* Remove box shadow by default */
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* Add box shadow on hover */
 }
 
 .dark-theme .portfolio-item {
@@ -115,4 +142,12 @@ body {}
 
 .dark-theme body {
     background-image: url(bg.svg) !important;
+}
+
+.imagethingy {
+    border-radius: 15px;
+}
+
+.gomb {
+    text-transform: uppercase;
 }
