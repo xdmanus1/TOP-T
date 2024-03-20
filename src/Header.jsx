@@ -1,14 +1,59 @@
-// Navbar.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import Login from './GoogleLogin.jsx';
+import Dropdown from './Dropdown.jsx';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import { faSignOutAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
     const [activeIndex, setActiveIndex] = useState(null);
     const [theme, setTheme] = useState('light');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isDev, setIsDev] = useState(false);
+
+    useEffect(() => {
+        const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+            setIsLoggedIn(!!user);
+            if (user) {
+                firebase.firestore().collection('admins').doc(user.uid).get()
+                    .then(doc => {
+                        if (doc.exists) {
+                            setIsAdmin(true);
+                            console.log('User is an admin');
+                        } else {
+                            setIsAdmin(false);
+                            console.log('User is not an admin');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking admin status:', error);
+                    });
+
+                firebase.firestore().collection('users').doc(user.uid).get()
+                    .then(doc => {
+                        if (doc.exists) {
+                            setIsDev(true);
+                            console.log('User is a developer');
+                        } else {
+                            setIsDev(false);
+                            console.log('User is not a developer');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking developer status:', error);
+                    });
+            }
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     const handleItemClick = (index) => {
         setActiveIndex(index);
@@ -48,29 +93,57 @@ const Navbar = () => {
                             index={0}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}
-                            to="/" // Updated to="/" as it corresponds to the LandingPage route
+                            to="/"
                         />
+
+                        <Dropdown label="Menü" options={[
+                            { label: "Rólunk", to: "/About" },
+                            { label: "Portfólió", to: "/PortfolioPage" },
+                            { label: "Devlog", to: "/DevlogPage" }
+                        ]} />
                         <NavItem
-                            label="Rólunk"
-                            index={1}
-                            activeIndex={activeIndex}
-                            onClick={handleItemClick}
-                            to="/About"
-                        />
-                        <NavItem
-                            label="Portfólió"
-                            index={1}
-                            activeIndex={activeIndex}
-                            onClick={handleItemClick}
-                            to="/PortfolioPage"
-                        />
-                        <NavItem
-                            label="Rendelés Űrlap"
-                            index={1}
+                            label="Szolgáltatásaink"
+                            index={3}
                             activeIndex={activeIndex}
                             onClick={handleItemClick}
                             to="/OrderPage"
                         />
+
+
+                        {/* <Dropdown className="adminas" label="Admin" index={4}> */}
+                        {isLoggedIn && (
+                            <>
+                                {isAdmin && <NavItem label="Admin Panel" index={4} to="/AdminPanel" />}
+                                {(isAdmin || isDev) && <NavItem label="Todo Lista" index={5} to="/TodoList" />}
+                            </>
+                        )}
+
+
+
+
+
+                        {/* </Dropdown> */}
+
+
+                        {isLoggedIn ? (
+                            <>
+                                <NavItem
+                                    label={<FontAwesomeIcon icon={faSignOutAlt} />}
+                                    index={6}
+                                    onClick={() => firebase.auth().signOut()}
+                                    to="/"
+                                />
+                            </>
+                        ) : (
+                            <NavItem
+                                label={<FontAwesomeIcon icon={faSignInAlt} />}
+                                index={7}
+                                activeIndex={activeIndex}
+                                onClick={handleItemClick}
+                                to="/login"
+                            />
+                        )}
+
                     </div>
                     <button className="theme-switch" onClick={toggleTheme}>
                         {theme === 'light' ? (

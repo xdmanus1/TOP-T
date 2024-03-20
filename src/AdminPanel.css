@@ -1,0 +1,330 @@
+.admin-panel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    /* Center the container */
+    font-size: larger;
+}
+
+.body2 {
+    background: none;
+}
+
+.body2.show {
+    background: rgb(207, 106, 12) !important;
+    background: linear-gradient(162deg, rgba(207, 106, 12, 1) 0%, rgb(165, 40, 40) 50%, rgb(71, 71, 71) 100%) !important;
+    margin: -20px;
+}
+
+.admin-panel-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.orders-management,
+.users-management {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+.orders-list,
+.users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: left;
+    /* Align list items to the left */
+}
+
+.order-item,
+.user-item {
+    margin-bottom: 10px;
+}
+
+.user-role-select {
+    border: 3px solid rgb(146, 146, 146);
+    border-radius: 10px;
+    transition: border 0.2s ease;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.user-role-select:hover {
+    border-color: #c7ae6a;
+}
+
+.order-info,
+.user-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.order-actions,
+.user-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.order-done-checkbox {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.order-delete-icon {
+    cursor: pointer;
+
+    font-size: 20px;
+    margin-top: 3px;
+    color: #000000;
+    transition: color 0.2s ease-in;
+}
+
+.dark-theme .order-delete-icon {
+    color: white;
+}
+
+/* Define CSS classes for different status colors */
+.status-Kész {
+    color: rgb(0, 98, 0);
+    pointer-events: none;
+}
+
+.status-Elfogadás {
+    color: black;
+}
+
+.status-undefined {
+    color: orange;
+}
+
+hr {
+    width: 200px;
+    height: 0.6px;
+    background-color: black;
+}
+
+.dark-theme hr {
+    width: 200px;
+    height: 0.6px;
+    background-color: rgb(255, 255, 255) !important;
+    border-color: white !important;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.xthing {
+
+    margin-top: 1px;
+
+}
+
+.order-delete-icon:hover {
+    color: red !important;
+}
+
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    color: #000000;
+
+}
+
+.dark-theme .loader {
+    color: white !important;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:after {
+    color: #c7ae6a;
+    transform: rotateY(70deg);
+    animation-delay: .4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: .2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: .2em .2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 .2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+}
+
+
+
+.loading-spinner-container {
+    transform: scale(4);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 25vh;
+}
+
+.orders-management,
+.users-management {
+
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    margin-bottom: 20px;
+}
+
+
+
+/* .dropdown-menu {
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 200px;
+    color: #000000 !important;
+    width: 20%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    left: 70%;
+}
+
+.dropdown-item a {
+    color: #000000 !important;
+}
+
+.dropdown-item:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.dropdown {
+    margin-right: 20px;
+    font-size: 1.5rem;
+} */
+
+.devlog-management {
+    width: 100% !important;
+    min-width: 100%;
+}
+
+.devlog-management {
+    background: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+
+    color: rgb(0, 0, 0) !important;
+    font-size: 1.6rem;
+}
+
+.devlog-management input {
+    width: 80%;
+}
+
+.devlog-management textarea {
+    width: 80%;
+}
+
+.devlog-management select {
+    width: 85%;
+}
+
+.devlog-management .btn-submit {
+    margin-bottom: 20px;
+}
+
+.devlogheader {
+    font-size: 1.7rem;
+}

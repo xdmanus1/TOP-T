@@ -1,0 +1,126 @@
+/* Your existing CSS */
+
+.nav-item-wrapper {
+    position: relative;
+}
+
+.dropdown {
+    border-top: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* Apply transition effect */
+}
+
+.navds {
+    text-align: center;
+    cursor: pointer;
+}
+
+.navds::after {
+    height: 2px !important;
+}
+
+.dropds {
+    margin: 0 !important;
+}
+
+.dropds::after {
+    width: 0 !important;
+}
+
+.dropdown-item {
+    color: rgb(0, 0, 0) !important;
+    margin-right: 0px !important;
+    margin-bottom: 5px !important;
+    font-size: 1.2rem;
+    opacity: 0;
+    /* Initially hide the dropdown items */
+    transform: translateY(-20px);
+    /* Move the dropdown items above initially */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    /* Apply transition effect */
+}
+
+.dropdown-item.show {
+    opacity: 1;
+    /* Show the dropdown items */
+    transform: translateY(0);
+    /* Move the dropdown items to their original position */
+}
+
+.dropdown-content.show {
+    background: rgba(255, 255, 255, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+.dropdown-content {
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    left: -45%;
+    border-radius: 15px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-content {
+        position: relative !important;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        left: 0;
+        background-color: transparent !important;
+        border: 0px transparent !important;
+        backdrop-filter: blur(0px) !important;
+        box-shadow: none !important;
+    }
+
+    .dropdown-item {
+        font-size: inherit;
+        color: white !important;
+        transition: none;
+        opacity: 100;
+        /* Remove transition on mobile devices */
+        transition: none;
+    }
+}
+
+.dropdown-item {
+    transform: translateY(40px);
+    filter: blur(3px);
+}
+
+.dropdown-item.show {
+    transform: translateY(0px);
+    filter: blur(0px);
+    transition: filter 0.6s ease-in, opacity 0.6s ease-in, transform 0.6s linear;
+    transform: translateX(0px);
+}
+
+.dropdown-item.show:nth-child(2) {
+    transition-delay: 0.5s;
+    transform: translateX(0px);
+}
+
+.dropdown-item:nth-child(2) {
+    transform: translateX(-90px);
+}
+
+.dropdown-item.show:nth-child(3) {
+    transition-delay: 1s;
+    transform: translateX(0px);
+}
+
+.dropdown-item:nth-child(3) {
+    transform: translateX(90px);
+}

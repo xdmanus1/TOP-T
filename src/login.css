@@ -1,0 +1,200 @@
+.loginbtn {
+    background-color: transparent !important;
+    padding: 2px !important;
+    transition: color 0.5s ease;
+}
+
+.loginbtn:hover {
+    color: #c7ae6a !important;
+}
+
+.modal {
+    position: fixed;
+    /* Position the modal */
+    top: 0;
+    /* Position from the top */
+    left: 0;
+    /* Position from the left */
+    width: 100%;
+    /* Take up the full width of the viewport */
+    height: 100%;
+    /* Take up the full height of the viewport */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    display: flex;
+    /* Use flexbox for centering */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    /* White background */
+    padding: 20px;
+    /* Add padding */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+    max-width: 400px;
+    /* Set maximum width */
+}
+
+.close {
+    position: absolute;
+    /* Position the close button */
+    top: 10px;
+    /* Position from the top */
+    right: 10px;
+    /* Position from the right */
+    cursor: pointer;
+    /* Add cursor pointer */
+}
+
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loginbtn {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+
+.forgot-password {
+    color: #007bff;
+    background-color: transparent;
+    text-align: left;
+}
+
+.registerbtn {
+    background-color: #007bff;
+    color: white;
+}
+
+.inp1 {
+    width: 100%;
+}
+
+.togglebtn {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.login-thingy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-direction: column;
+
+
+}
+
+.eye {
+    position: absolute;
+    top: 65%;
+    right: 0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.eye1 {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    border-bottom: 2px solid #000000;
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.logbtn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.registerbtn {
+    right: -10.5%;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.logbtn1 {
+    margin-top: 10px;
+}
+
+
+
+.logmein {
+    display: flex;
+    flex-direction: column;
+}
+
+.logbtn {
+    margin-right: 0px;
+}
+
+.forgot-password {
+    margin-bottom: 10px;
+}

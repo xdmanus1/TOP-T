@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import './LandingPage.css'; // import CSS for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import testimg1 from './assets/testsok1.jpg';
-import testimg2 from './assets/testsok5.jpg';
-import testimg3 from './assets/testsok4.jpg';
+import testimg1 from './assets/cotrh.jpg';
+import testimg2 from './assets/tfg.jpg';
+import testimg3 from './assets/TTPC.jpg';
 import testimg4 from './assets/test4.jpg';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     const images = [
@@ -33,8 +34,8 @@ const LandingPage = () => {
 
     return (
         <div className="landing-page">
-            <h1>Üdv a Top T corp. Weboldalán</h1>
-
+            <h1>Üdv. a Top T corp. Weboldalán</h1>
+            <h2>Projektjeink:</h2>
             <div className="image-carousel">
                 <button className="carousel-button prev" onClick={goToPrevSlide}>
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -79,33 +80,46 @@ const LandingPage = () => {
                         <li>Felhőalapú megoldások</li>
                         <li>Tanácsadás</li>
                     </ul>
+                    <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                        <button>Tuddj meg Többet --- &#62;</button>
+                    </Link>
                 </div>
                 <div className="box1">
-                    <h4>Kódolás:</h4>
+                    <h4>Csapatunk:</h4>
                     <img className='imgbox' src={testimg4} alt="testimg" />
+                    <Link to="/About" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                        <button style={{ marginTop: "10px" }}>Tovább --- &#62;</button>
+                    </Link>
                 </div>
             </div>
-            <div className='pricing'>
+
+            {/* <div className='pricing'>
                 <div className='pricingbox'>
-                    <h4 className='typethingy'>Basic</h4>
+                    <h4 className='typethingy' style={{ backgroundColor: "rgba(0, 0, 186, 0.3)" }}>Basic</h4>
                     <h4 className='price'>Ár: 100.000ft-tól</h4>
                     <p className='ppric'>- Egy oldalas web oldal <br />- Custom Domain <br />- Support</p>
-                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                    <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                        <button>Kapcsolatfelvétel</button>
+                    </Link>
                 </div>
                 <div className='pricingbox'>
-                    <h4 className='typethingy'>Pro</h4>
+                    <h4 className='typethingy' style={{ backgroundColor: "rgba(0, 186, 0, 0.3)" }}>Pro</h4>
                     <h4 className='price'>Ár: 200.000ft-tól</h4>
                     <p className='ppric'>- Több oldalas web oldal <br />- Custom Domain <br />- Support</p>
-                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                    <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                        <button>Kapcsolatfelvétel</button>
+                    </Link>
                 </div>
                 <div className='pricingbox'>
-                    <h4 className='typethingy'>Enterprise</h4>
+                    <h4 className='typethingy' style={{ backgroundColor: "rgba(192, 162, 0, 0.3)" }}>Enterprise</h4>
                     <h4 className='price'>Ár: 300.000ft-tól</h4>
                     <p className='ppric'>- Több oldalas web oldal <br />- Custom Domain <br />- Support</p>
-                    <button className='kapcs'>Kapcsolatfelvétel</button>
+                    <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                        <button>Kapcsolatfelvétel</button>
+                    </Link>
                 </div>
 
-            </div>
+            </div> */}
         </div >
     );
 };

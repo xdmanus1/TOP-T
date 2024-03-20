@@ -1,0 +1,45 @@
+.hrs {
+    width: 100% !important;
+
+}
+
+.uls {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.cim {
+    font-size: 2rem;
+    margin-left: 1%;
+    text-align: center;
+
+}
+
+.others {
+    font-size: 1.2rem;
+    margin-left: 5%;
+}
+
+.others2 {
+    margin-left: 10%;
+
+}
+
+.devh1 {
+    text-align: center;
+}
+
+.devlog-entry {
+    position: relative;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    color: red;
+}

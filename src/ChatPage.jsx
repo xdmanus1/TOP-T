@@ -24,19 +24,19 @@ function PortfolioPage() {
     const projects = [
         {
             name: 'Top T Physics Constitution',
-            image: 'src/assets/TTPC.png',
+            image: 'src/assets/TTPC.jpg',
             description: 'Ez a projekt egy Közép Iskolás fizikai projekt munka miatt jött létre. Amelyben egy tömeg átváltót készítettünk el.',
             link: 'http://ttpc.rf.gd',
         },
         {
             name: 'Chronicles of the Relic Hunters',
-            image: 'src/assets/cotrh.png',
+            image: 'src/assets/cotrh.jpg',
             description: 'Another brief description.',
             link: 'http://projektmunka.rf.gd',
         },
         {
             name: 'The Physics Game',
-            image: 'src/assets/tfg.png',
+            image: 'src/assets/tfg.jpg',
             description: 'The last project description.',
             link: 'https://xdmanus1.github.io/the-physics-game/',
         },

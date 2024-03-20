@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 import './OrderPage.css';
 import ErrorModal from './ErrorModal';
 import SuccessModal from './SuccessModal';
 
-function App() {
+function OrderPage() {
     const [showErrorModal, setShowErrorModal] = useState(false);
     const [showSuccessModal, setShowSuccessModal] = useState(false);
     const [lastSubmissionTime, setLastSubmissionTime] = useState(parseInt(localStorage.getItem('lastSubmissionTime')) || 0);
@@ -61,21 +63,15 @@ function App() {
             }
         }
 
-        const webhookURL = 'https://discord.com/api/webhooks/1213921023775477931/lR_1ZPWbwfjB8cbSV7Ry8H9scae9NiFMw02apQIAZOPpfXoCEVhYvn8086qMSH1ebFYT';
-
         try {
-            // Prepare payload
-            const payload = {
-                content: `Új rendelés érkezett:\nNév: ${name}\nEmail: ${email}\nTermék: ${product}\nTovábbi szöveg: ${additionalText}\nTelefonszám: ${phoneNumber}`
-            };
-
-            // Send payload to webhook
-            await fetch(webhookURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
+            // Store form data in Firestore
+            await firebase.firestore().collection('orders').add({
+                name,
+                email,
+                product,
+                additionalText,
+                phoneNumber,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
             });
 
             // Show success modal
@@ -136,8 +132,35 @@ function App() {
         }
     }, []);
 
-    return (
+    return (<div>
+        <div className='szolg'>
+            <h1 className='szolgh1'>Szolgáltatásaink</h1>
+            <h2>Kreatív Webfejlesztés és Tervezés:</h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;Szakértő csapatunk innovatív weboldalakat tervez és fejleszt, figyelembe véve ügyfeleink egyedi igényeit és a legfrissebb trendeket.
+                Rugalmas megközelítésünk lehetővé teszi számunkra, hogy minden projekten egyedi és felhasználóbarát weboldalakat hozzunk létre.
+            </p>
+
+            <h2>Mobilalkalmazás Fejlesztés:</h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;Tapasztalt fejlesztőink mobilalkalmazások tervezésében és fejlesztésében jeleskednek minden platformon.
+                Az intuitív felhasználói élmény és a hatékony funkcionalitás jellemzi alkalmazásainkat, amelyek segítik ügyfeleinket céljaik elérésében.
+            </p>
+
+            <h2>Felhőalapú Megoldások:</h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;A TOP T Cég kiemelkedő szakértelmet kínál a felhőalapú megoldások terén, beleértve az infrastruktúrát, az alkalmazásokat és az adattárolást.
+                Rugalmas és skálázható felhőmegoldásaink segítségével ügyfeleink hatékonyan növelhetik vállalkozásuk hatékonyságát és rugalmasságát.
+            </p>
+
+            <h2>Szakértő Tanácsadás:</h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;Tapasztalt tanácsadóink stratégiai és technológiai tanácsokkal látják el ügyfeleinket, hogy segítsenek nekik a legjobb döntések meghozatalában.
+                Az üzleti igényekre szabott tanácsadásunk célja a hosszú távú siker és a versenyelőny biztosítása minden ügyfelünknek.
+            </p>
+        </div>
         <div className="container">
+
             <h2 className='ordtx'>Rendelés űrlap</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -171,9 +194,10 @@ function App() {
             </form>
 
             <ErrorModal onClose={closeModal} className={showErrorModal ? 'show' : 'hide'} />
-            <SuccessModal onClose={closeModal} className={showSuccessModal ? 'show' : 'hide'} />
+            <SuccessModal onClose={closeModal} className={showSuccessModal ? 'show' : 'hide'} message="A rendelés leadás sikeres." />
         </div>
+    </div>
     );
 }
 
-export default App;
+export default OrderPage;

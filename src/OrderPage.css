@@ -17,11 +17,13 @@ body {
 
 .container {
     max-width: 600px;
-    margin: 100px auto 0 auto;
+    margin: 50px auto 0 auto;
     padding: 20px;
     background-color: var(--form-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: -50px;
 }
 
 .input-field {
@@ -237,4 +239,26 @@ select {
 
 .btn-submit {
     align-self: center;
+}
+
+.szolg {
+    margin: auto;
+    padding: 2rem;
+    max-width: 70%;
+    text-align: justify;
+}
+
+.szolg h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.szolg p {
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.szolgh1 {
+    text-align: center;
+    font-size: xx-large;
 }
