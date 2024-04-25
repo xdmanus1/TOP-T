@@ -161,7 +161,7 @@ function OrderPage() {
         </div>
         <div className="container">
 
-            <h2 className='ordtx'>Rendelés űrlap</h2>
+            <h2 className='ordtx'>Rendelési űrlap</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Név</label>
@@ -174,9 +174,10 @@ function OrderPage() {
                 <div className="form-group">
                     <label htmlFor="product">Termék</label>
                     <select id="product" name="product" className="input-field">
-                        <option className="input-field1" value="basic">Basic</option>
-                        <option className="input-field1" value="pro">Pro</option>
-                        <option className="input-field1" value="enterprise">Enterprise</option>
+                        <option className="input-field1" value="webdev">Webfejlesztés és Tervezés</option>
+                        <option className="input-field1" value="phoneapp">Mobilalkalmazás Fejlesztés</option>
+                        <option className="input-field1" value="cloud">Felhőalapú Megoldás</option>
+                        <option className="input-field1" value="consulting">Tanácsadás</option>
                     </select>
                 </div>
                 <div className="form-group">

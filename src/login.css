@@ -135,6 +135,7 @@
     justify-content: center;
     margin-top: 5rem;
     flex-direction: column;
+    height: 60vh;
 
 
 }
@@ -149,8 +150,8 @@
 
 .eye1 {
     position: absolute;
-    top: 50%;
-    right: 0px;
+    top: 45%;
+    right: -10px;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -197,4 +198,22 @@ input {
 
 .forgot-password {
     margin-bottom: 10px;
+}
+
+.inp1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: left !important;
+}
+
+.inp2 {
+    width: 115% !important;
+    left: -1.6rem;
+    position: relative;
+}
+
+.inp1:-webkit-autofill {
+    -webkit-text-fill-color: #000000;
+    -webkit-box-shadow: 0 0 0px 1000px #d3d3d3 inset;
+    transition: background-color 5000s ease-in-out 0s;
 }

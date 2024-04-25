@@ -5,15 +5,27 @@
     text-align: center;
     /* Center the container */
     font-size: larger;
+    height: 100%;
+
 }
 
+/* body {
+    background: rgb(212, 134, 63) !important;
+    background: linear-gradient(165deg, rgba(212, 134, 63, 1) 0%, rgba(168, 22, 22, 1) 50%, rgba(0, 0, 0, 1) 100%) !important;
+    margin-top: -20px;
+} */
+
 .body2 {
-    background: none;
+    background: rgb(212, 134, 63);
+    background: linear-gradient(165deg, rgba(212, 134, 63, 1) 0%, rgba(168, 22, 22, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    margin-top: -20px;
+    margin-bottom: -20px;
+
 }
 
 .body2.show {
-    background: rgb(207, 106, 12) !important;
-    background: linear-gradient(162deg, rgba(207, 106, 12, 1) 0%, rgb(165, 40, 40) 50%, rgb(71, 71, 71) 100%) !important;
+    background: rgb(212, 134, 63);
+    background: linear-gradient(165deg, rgba(212, 134, 63, 1) 0%, rgba(168, 22, 22, 1) 50%, rgba(0, 0, 0, 1) 100%);
     margin: -20px;
 }
 
@@ -113,7 +125,7 @@
 }
 
 .status-undefined {
-    color: orange;
+    color: rgb(0, 0, 0);
 }
 
 hr {
@@ -236,6 +248,9 @@ hr {
 
 
 .loading-spinner-container {
+    margin-bottom: 100vh;
+
+
     transform: scale(4);
     display: flex;
     flex-direction: column;
@@ -243,7 +258,7 @@ hr {
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin-top: 25vh;
+    margin-top: 35vh;
 }
 
 .orders-management,
@@ -295,6 +310,7 @@ hr {
 .devlog-management {
     width: 100% !important;
     min-width: 100%;
+    top: 0 !important;
 }
 
 .devlog-management {
@@ -311,6 +327,7 @@ hr {
 
 .devlog-management input {
     width: 80%;
+    color: rgb(0, 0, 0);
 }
 
 .devlog-management textarea {
@@ -327,4 +344,10 @@ hr {
 
 .devlogheader {
     font-size: 1.7rem;
+}
+
+.hrse {
+    background-color: white;
+    border-color: white;
+    width: 70%;
 }

@@ -80,7 +80,7 @@ const Navbar = () => {
     return (
         <div className='base'>
             <nav className={`navbar ${theme}`}>
-                <Link to="/" className="navbar-left">Top T</Link>
+                <Link to="/" className="navbar-left">Top T Corporation</Link>
                 <div className="navbar-right">
                     <div className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                         <div className="bar"></div>
@@ -99,7 +99,7 @@ const Navbar = () => {
                         <Dropdown label="Menü" options={[
                             { label: "Rólunk", to: "/About" },
                             { label: "Portfólió", to: "/PortfolioPage" },
-                            { label: "Devlog", to: "/DevlogPage" }
+                            { label: "Fejlesztői Napló", to: "/DevlogPage" }
                         ]} />
                         <NavItem
                             label="Szolgáltatásaink"
@@ -108,6 +108,13 @@ const Navbar = () => {
                             onClick={handleItemClick}
                             to="/OrderPage"
                         />
+                        {/* <NavItem
+                            label="Jelentkezés"
+                            index={4}
+                            activeIndex={activeIndex}
+                            onClick={handleItemClick}
+                            to="/SignUp"
+                        /> */}
 
 
                         {/* <Dropdown className="adminas" label="Admin" index={4}> */}

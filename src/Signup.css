@@ -1,0 +1,96 @@
+:root {
+    --background-color: #121212;
+    --text-color: rgb(0, 0, 0);
+    --form-bg-color: rgba(224, 224, 224, 0.5);
+    --input-border-color: #555;
+    --placeholder-color: #000000;
+}
+
+.charmander-form {
+    width: 40%;
+    max-width: 500px;
+    margin: 10vh auto;
+    padding: 30px;
+    background-color: var(--form-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: -50px;
+    border: #555 solid 1px;
+}
+
+@media (max-width: 768px) {
+    .charmander-form {
+        width: 90%;
+
+
+    }
+
+}
+
+.dark-theme .pikachu-label {
+    color: #ffffff;
+}
+
+.dark-theme .charmander-form {
+    color: #ffffff;
+    border: #000000 solid 1px;
+}
+
+.dark-theme .pikachu-input::placeholder {
+    color: #ffffff;
+}
+
+.dark-theme .pikachu-input {
+    color: #ffffff;
+}
+
+.pikachu-group {
+    margin-bottom: 20px;
+}
+
+.pikachu-label {
+    display: block;
+    font-weight: bold;
+
+    color: black;
+    opacity: 1;
+
+}
+
+.pikachu-input {
+    text-align: center;
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid var(--input-border-color);
+    background-color: transparent;
+    color: var(--text-color);
+    outline: none;
+}
+
+.pikachu-input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.charizard-button {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.charizard-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.charizard-button:hover {
+    background-color: #0056b3;
+}
+
+.jigglypuff-error {
+    color: red;
+    font-size: 14px;
+}

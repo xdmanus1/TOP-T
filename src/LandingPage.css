@@ -51,6 +51,30 @@
     z-index: 1;
 }
 
+@media screen and (min-aspect-ratio: 4/3) and (max-aspect-ratio: 4/3) {
+    .carousel-button.next {
+        top: 37%;
+    }
+
+    .carousel-button.prev {
+        top: 37%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .image-carousel {
+        max-width: 100% !important;
+    }
+
+    .navigation-dots {
+        position: absolute;
+        bottom: 130px !important;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 100;
+    }
+}
 
 
 
@@ -413,6 +437,11 @@ h4 {
 
 .kapcs {
     font-size: 1rem;
-    margin-bottom: 10px;
-    margin-top: -30px;
+    margin-top: 0px;
+}
+
+.btnsasd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

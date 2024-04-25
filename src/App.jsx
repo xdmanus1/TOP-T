@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Header.jsx';
+import Footer from './Footer.jsx';
 import LandingPage from './LandingPage.jsx';
 import AboutPage from './about.jsx';
 import PortfolioPage from './ChatPage.jsx';
@@ -9,6 +10,7 @@ import TodoList from './TodoList.jsx';
 import Login from './GoogleLogin.jsx';
 import AdminPanel from './AdminPanel.jsx';
 import DevlogPage from './DevlogPage.jsx';
+import SignUpForm from './Signup.jsx';
 import './firebase.js'; // Import firebase.js here
 
 function App() {
@@ -24,7 +26,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/AdminPanel" element={<AdminPanel />} />
         <Route path="/DevlogPage" element={<DevlogPage />} />
+        <Route path="/SignUp" element={<SignUpForm />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

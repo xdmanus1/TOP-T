@@ -34,8 +34,8 @@ const LandingPage = () => {
 
     return (
         <div className="landing-page">
-            <h1>Üdv. a Top T corp. Weboldalán</h1>
-            <h2>Projektjeink:</h2>
+            <h1>Üdvözöllek a Top T Corporation Weboldalán!</h1>
+            <h2>Eddigi közös projektjeink:</h2>
             <div className="image-carousel">
                 <button className="carousel-button prev" onClick={goToPrevSlide}>
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -64,11 +64,11 @@ const LandingPage = () => {
                 </div>
             </div>
             <div>
-                <h2 className='why-c-us'>Miért válasszon minket?</h2>
+                <h2 className='why-c-us'>Miért válassz minket?</h2>
                 <ul className='why-us'>
-                    <li><h3>Tapasztalt csapat:</h3> Top T-nk elkötelezett, tapasztalt szakemberekből áll, akik szerteágazó tudással rendelkeznek az informatika területén.</li>
+                    <li><h3>Tapasztalt csapat:</h3>Nálunk a Top T-nél csak és kizárólag elkötelezett és szakterületükön kiváló szakemberek dolgoznak.</li>
                     <li><h3>Ügyfélközpontú megközelítés:</h3>Minden projektünkben az ügyfelek igényeire és céljaira koncentrálunk, hogy olyan egyedi megoldásokat nyújtsunk, amelyek valóban kiemelkedő eredményeket hoznak.</li>
-                    <li><h3>Innováció és minőség:</h3> Top T mindig a legújabb technológiák felé nyitott, és minden munkánkat a legmagasabb minőségi sztenderdek szerint végezzük el.</li>
+                    <li><h3>Innováció és minőség:</h3> Cégünk mindig a legkorszerűbb technológiai lehetőségeket használja, hogy szolgáltatásunk minősége kifogásolhatatlan legyen.</li>
                 </ul>
             </div>
             <div className="flex-container">
@@ -80,16 +80,22 @@ const LandingPage = () => {
                         <li>Felhőalapú megoldások</li>
                         <li>Tanácsadás</li>
                     </ul>
-                    <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
-                        <button>Tuddj meg Többet --- &#62;</button>
-                    </Link>
+                    <div className='btnsasd'>
+                        <Link to="/OrderPage" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                            {/* <button>Tuddj meg Többet --- &#62;</button> */}
+                            <button>További információkért kattints ide!</button>
+                        </Link>
+                    </div>
                 </div>
                 <div className="box1">
                     <h4>Csapatunk:</h4>
                     <img className='imgbox' src={testimg4} alt="testimg" />
-                    <Link to="/About" className='kapcs' style={{ position: "relative", top: "-5px" }}>
-                        <button style={{ marginTop: "10px" }}>Tovább --- &#62;</button>
-                    </Link>
+                    <div className='btnsasd'>
+                        <Link to="/About" className='kapcs' style={{ position: "relative", top: "-5px" }}>
+                            {/* <button style={{ marginTop: "10px" }}>Tovább --- &#62;</button> */}
+                            <button style={{ marginTop: "10px" }}>További információkért kattints ide!</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

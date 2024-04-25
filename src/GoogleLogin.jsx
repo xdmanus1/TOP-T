@@ -5,6 +5,8 @@ import 'firebase/compat/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faUserPlus, faEye, faEyeSlash, faKey, faQuestionCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './login.css';
+import ErrorModal2 from './ErrorModal2';
+
 
 
 
@@ -16,6 +18,8 @@ const EmailPasswordLogin = () => {
     const [resetTimer, setResetTimer] = useState(null);
     const [resetButtonDisabled, setResetButtonDisabled] = useState(false);
     const [resetAttemptCount, setResetAttemptCount] = useState(0);
+    const [showErrorModal, setShowErrorModal] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSignInWithEmailAndPassword = async () => {
         try {
@@ -24,6 +28,8 @@ const EmailPasswordLogin = () => {
             console.log('User signed in with email and password:', user);
         } catch (error) {
             console.error('Email/password sign-in error:', error);
+            setErrorMessage(error.message);
+            setShowErrorModal(true);
             // Display error message to the user
         }
     };
@@ -108,6 +114,7 @@ const EmailPasswordLogin = () => {
                     <FontAwesomeIcon icon={faTimes} onClick={() => setShowResetPopup(false)} />
                 </div>
             )}
+            {/* {showErrorModal && <ErrorModal2 errorMessage={errorMessage} onClose={() => setShowErrorModal(false)} />} */}
         </div>
     );
 };
@@ -155,16 +162,18 @@ const RegistrationForm = ({ isVisible }) => {
 
     return isVisible ? (
         <div >
+            <p>Email</p>
             <input
-                className='inp1'
+                className='inp1 inp2'
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
             />
+            <p>Jelszó</p>
             <div className="password-wrapper">
                 <input
-                    className='inp1'
+                    className='inp1 inp2'
                     type="password"
                     placeholder="Password"
                     value={password}

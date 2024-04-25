@@ -27,7 +27,7 @@
 
 .team-member {
     flex: 0 0 calc(33.33% - 20px);
-    max-width: 300px;
+    max-width: 400px;
     background: rgba(224, 224, 224, 0.5);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -69,17 +69,31 @@
 
 /* Box shadow only on hover */
 .team-member {
-    box-shadow: none;
-    /* Remove box shadow by default */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.130);
 }
 
 .team-member:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    /* Add box shadow on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.413);
+
 }
 
-/* Media query for responsiveness */
+
+
 @media (max-width: 768px) {
+    .team {
+        margin-top: 200px;
+        height: 45rem;
+
+    }
+
+    .aboutt {
+        width: 90% !important;
+    }
+
+    .abouttt {
+        margin-left: 0px !important;
+    }
+
     .team-category {
         flex-direction: column;
         /* Stack elements vertically */
@@ -93,8 +107,132 @@
         flex: 0 0 calc(100% - 20px);
         /* Set flex to 100% minus margins */
         margin: 0 0 15px 0;
-        max-width: 90%;
+        max-width: 70%;
         min-width: 60%;
         /* Set margin for spacing */
+        display: block;
+    }
+
+    .team-member img {}
+}
+
+.aboutt {
+    margin: auto;
+    width: 60%;
+    font-size: 1.2rem;
+}
+
+.abouttt {
+    margin-left: 1rem;
+}
+
+.kapcse {
+    color: #b99a45;
+}
+
+.kapcse:hover {
+    color: #d5c28f;
+}
+
+.modal6 {
+    display: none;
+    position: fixed;
+    top: 250px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.bgsa {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.601);
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    /* Ensure it's behind other elements */
+}
+
+/* Default styles for modal content */
+.modal-content6 {
+    background-color: rgba(255, 255, 255, 0.309);
+    /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 40px rgba(113, 86, 67, 0.3);
+    max-width: 500px;
+    margin: 0 auto;
+    z-index: 1;
+    backdrop-filter: blur(5px) !important;
+    /* Apply blur effect to background */
+}
+
+.dark-theme .modal-content6 {
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.3);
+}
+
+.imagesing {
+    border-radius: 50px;
+    width: 200px;
+}
+
+@media (max-width: 767px) {
+    .modal-content6 {
+        backdrop-filter: none;
+        /* Remove blur effect on mobile */
+    }
+}
+
+/* Media query for iPhones */
+@media only screen and (max-width: 414px) {
+    .modal-content6 {
+        flex-direction: column;
+        /* Change flex direction to column */
+        align-items: flex-start;
+        /* Align items to the start of the column */
+    }
+
+    .imagesing {
+        margin-right: 0;
+        /* Reset margin for image */
+        margin-bottom: 20px;
+        /* Add margin to bottom for spacing */
+    }
+}
+
+.close-btn {
+    background-color: transparent !important;
+    text-align: right !important;
+    left: 85%;
+    top: 10%;
+    font-size: 1.2rem;
+    position: absolute;
+}
+
+.close-btn:hover {
+    border-color: transparent !important;
+    color: red !important;
+}
+
+@media only screen and (max-width: 414px) {
+
+    /* Adjust max-width as needed */
+    .modal-content6 {
+        flex-direction: column;
+        /* Change flex direction to column */
+        align-items: flex-start;
+        /* Align items to the start of the column */
+    }
+
+    .imagesing {
+        margin-right: 0;
+        /* Reset margin for image */
+        margin-bottom: 20px;
+        /* Add margin to bottom for spacing */
     }
 }

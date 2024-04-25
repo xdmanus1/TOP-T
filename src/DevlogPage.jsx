@@ -17,8 +17,14 @@ function DevlogPage() {
                 const devlogsRef = firebase.firestore().collection('devlogs');
                 const snapshot = await devlogsRef.get();
                 const devlogData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                // Sort the devlogs array by timestamp in reverse chronological order (latest first)
+                devlogData.sort((a, b) => b.time.seconds - a.time.seconds);
                 setDevlogs(devlogData);
-                setLoading(false);
+
+                // Simulate loading delay for 1 seconds
+                setTimeout(() => {
+                    setLoading(false);
+                }, 1000);
             } catch (error) {
                 console.error('Hiba a devnaplók lekérésekor:', error);
             }
@@ -67,6 +73,7 @@ function DevlogPage() {
     const handleDeleteConfirm = async () => {
         if (selectedDevlog) {
             try {
+
                 await firebase.firestore().collection('devlogs').doc(selectedDevlog.id).delete();
                 setDevlogs(devlogs.filter(devlog => devlog.id !== selectedDevlog.id));
             } catch (error) {
@@ -81,7 +88,9 @@ function DevlogPage() {
     };
 
     if (loading) {
-        return <p>Betöltés...</p>;
+        return <div className="loading-spinner-container">
+            <span className="loader"></span>
+        </div>;
     }
 
     return (
@@ -92,10 +101,11 @@ function DevlogPage() {
                     <div key={devlog.id} className="devlog-entry">
                         {isAdmin && <span className="delete-icon" onClick={() => handleDeleteClick(devlog)}>X</span>}
                         <h2 className='cim'>Cím: <b>{devlog.header}</b></h2>
+                        <p className='others'>Fejlesztő: {devlog.devName}</p>
                         {Array.isArray(devlog.changes) ? (
                             <div className='others'>
                                 <p>Változások:</p>
-                                <ul className='others2'>
+                                <ul style={{ listStyleType: "disc" }} className='others2'>
                                     {devlog.changes.map(change => (
                                         <li key={change}>{change}</li>
                                     ))}
@@ -104,12 +114,13 @@ function DevlogPage() {
                         ) : (
                             <p>Nincsenek rögzített változások</p>
                         )}
-                        <p className='others'>Fejlesztő: {devlog.devName}</p>
+
                         <p className='others'>Idő: {formatDate(devlog.time)}</p>
                         <hr className='hrs' />
                     </div>
-                ))}
-            </ul>
+                ))
+                }
+            </ul >
             {showConfirmModal && (
                 <ConfirmModal
                     onClose={handleDeleteCancel}
@@ -118,7 +129,7 @@ function DevlogPage() {
                     showConfirmModal={true}
                 />
             )}
-        </div>
+        </div >
     );
 }
 

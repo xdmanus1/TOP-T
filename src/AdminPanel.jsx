@@ -3,6 +3,7 @@ import firebase from 'firebase/compat/app';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import DevlogPage from './DevlogAddForm.jsx';
+import SignupAdmin from './SignUpAdmin.jsx';
 // import DevlogManager from './DevlogManager.jsx';
 import './AdminPanel.css'; // Assuming you have a CSS file for styling
 
@@ -52,7 +53,7 @@ const AdminPanel = () => {
                     const ordersData = ordersSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     setOrders(ordersData);
                     setLoadingOrders(false);
-                }, 1000); // Delay of 2000 milliseconds (2 seconds)
+                }, 2000); // Delay of 2000 milliseconds (2 seconds)
             } catch (error) {
                 console.error('Error fetching orders:', error);
             }
@@ -168,10 +169,11 @@ const AdminPanel = () => {
                             </ul>
                         </div>
                         <DevlogPage />
+                        {/* <SignupAdmin /> */}
                         {/* <DevlogManager /> */}
-                        <button className="experimental-background-button" onClick={toggleExperimentalBackground}>
+                        {/* <button className="experimental-background-button" onClick={toggleExperimentalBackground}>
                             {experimentalBackground ? "Turn off Experimental Background" : "Turn on Experimental Background"}
-                        </button>
+                        </button> */}
                     </>
                 )}
             </div>

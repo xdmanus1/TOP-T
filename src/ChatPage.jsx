@@ -1,6 +1,8 @@
 import React from 'react';
 import './ChatPage.css';
-
+import img1 from './assets/cotrh.jpg';
+import img2 from './assets/TTPC.jpg';
+import img3 from './assets/tfg.jpg';
 function PortfolioItem({ name, image, description, link }) {
     return (
         <div className="portfolio-item">
@@ -24,20 +26,20 @@ function PortfolioPage() {
     const projects = [
         {
             name: 'Top T Physics Constitution',
-            image: 'src/assets/TTPC.jpg',
+            image: img2,
             description: 'Ez a projekt egy Közép Iskolás fizikai projekt munka miatt jött létre. Amelyben egy tömeg átváltót készítettünk el.',
             link: 'http://ttpc.rf.gd',
         },
         {
             name: 'Chronicles of the Relic Hunters',
-            image: 'src/assets/cotrh.jpg',
-            description: 'Another brief description.',
+            image: img1,
+            description: 'Ez a projekt a Közép Iskolai projektjeink között az első volt. Melyben Megtanultuk az alapokat és ki alakítottuk az első terveinket.',
             link: 'http://projektmunka.rf.gd',
         },
         {
             name: 'The Physics Game',
-            image: 'src/assets/tfg.jpg',
-            description: 'The last project description.',
+            image: img3,
+            description: 'Ebben a projektben egy fizika órán feldobott játék ötletet készítettünk el.',
             link: 'https://xdmanus1.github.io/the-physics-game/',
         },
 

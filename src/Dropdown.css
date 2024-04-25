@@ -34,9 +34,10 @@
     margin-right: 0px !important;
     margin-bottom: 5px !important;
     font-size: 1.2rem;
+    visibility: hidden;
     opacity: 0;
     /* Initially hide the dropdown items */
-    transform: translateY(-20px);
+    transform: translateY(-2000px);
     /* Move the dropdown items above initially */
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     /* Apply transition effect */
@@ -44,6 +45,7 @@
 
 .dropdown-item.show {
     opacity: 1;
+    visibility: visible;
     /* Show the dropdown items */
     transform: translateY(0);
     /* Move the dropdown items to their original position */
@@ -54,6 +56,7 @@
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.9px);
+    top: 100%;
     -webkit-backdrop-filter: blur(8.9px);
     border: 1px solid rgba(255, 255, 255, 0.19);
 }
@@ -66,12 +69,17 @@
     flex-direction: column;
     gap: 5px;
     padding: 10px;
-    left: -45%;
+    left: -50%;
     border-radius: 15px;
-    color: white;
+    top: -2000%;
+    transition: background 0.2s ease, backdrop-filter 0.2s ease, box-shadow 0.2s ease, border 0.7s ease;
 }
 
 @media screen and (max-width: 768px) {
+    .nav-item {
+        font-size: 1.3rem;
+    }
+
     .dropdown-content {
         position: relative !important;
         display: flex;
@@ -79,19 +87,33 @@
         gap: 5px;
         padding: 10px;
         left: 0;
+        margin: 0px;
+
+        margin-bottom: -30px;
         background-color: transparent !important;
         border: 0px transparent !important;
         backdrop-filter: blur(0px) !important;
         box-shadow: none !important;
     }
 
+    .dropdown-content::after {
+        background-color: transparent !important;
+    }
+
     .dropdown-item {
         font-size: inherit;
         color: white !important;
-        transition: none;
-        opacity: 100;
+        transition: none !important;
+        transform: none !important;
+        filter: blur(0) !important;
+        opacity: 1 !important;
         /* Remove transition on mobile devices */
         transition: none;
+        visibility: visible;
+    }
+
+    .nav-item::after {
+        background-color: transparent !important;
     }
 }
 
@@ -103,12 +125,12 @@
 .dropdown-item.show {
     transform: translateY(0px);
     filter: blur(0px);
-    transition: filter 0.6s ease-in, opacity 0.6s ease-in, transform 0.6s linear;
+    transition: filter 0.3s ease-in, opacity 0.3s ease-in, transform 0.3s linear;
     transform: translateX(0px);
 }
 
 .dropdown-item.show:nth-child(2) {
-    transition-delay: 0.5s;
+    transition-delay: 0.3s;
     transform: translateX(0px);
 }
 
@@ -117,7 +139,7 @@
 }
 
 .dropdown-item.show:nth-child(3) {
-    transition-delay: 1s;
+    transition-delay: 0.6s;
     transform: translateX(0px);
 }
 

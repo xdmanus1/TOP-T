@@ -68,6 +68,10 @@
 
 }
 
+.dropds::after {
+    background-color: transparent !important;
+}
+
 .base {
     position: sticky;
     top: 0;
@@ -187,6 +191,16 @@
     .menu-toggle {
         display: none;
     }
+
+    /* 
+    .dropds::after {
+        background-color: transparent !important;
+
+    }
+
+    .menu-items .nav-item::after {
+        background-color: transparent;
+    } */
 
     .menu-items {
         position: relative;
